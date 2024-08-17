@@ -1,6 +1,6 @@
 # App DevelopmentForms
 
-En este repositorio, se encuntra una App desarrollada en C# .NET version 4.7.2 que tiene la habilidad de poder calcular el area y perimetro del cuadrado, circulo y trapecio rectangulo en los idiomas: castellano, ingles e italiano
+En este repositorio, se encuentra una App desarrollada en C# .NET version 4.7.2 que tiene la habilidad de poder calcular el area y perimetro del cuadrado, circulo y trapecio rectangulo en los idiomas: castellano, ingles e italiano
 
 # Nota
 
