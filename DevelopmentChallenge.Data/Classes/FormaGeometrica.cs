@@ -38,7 +38,7 @@ namespace DevelopmentChallenge.Data.Classes
             {
                 { Idioma.Castellano, "formas" },
                 { Idioma.Ingles, "shapes" },
-                { Idioma.Italiano, "forme" }
+                { Idioma.Italiano, "formes" }
             };
 
             if (!formas.Any())
@@ -64,7 +64,7 @@ namespace DevelopmentChallenge.Data.Classes
 
                 foreach (var forma in resumen)
                 {
-                    sb.Append($"{forma.Cantidad} {forma.Forma.TraducirForma(idioma)} | Area {forma.Area:#.##} | {perimetroLabel[idioma]} {forma.Perimetro:#.##} <br/>");
+                    sb.Append($"{forma.Cantidad} {forma.Forma.TraducirForma(idioma, forma.Cantidad)} | Area {forma.Area:#.##} | {perimetroLabel[idioma]} {forma.Perimetro:#.##} <br/>");
                     areaTotal += forma.Area;
                     perimetroTotal += forma.Perimetro;
                 }

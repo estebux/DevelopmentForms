@@ -11,6 +11,6 @@ namespace DevelopmentChallenge.Data.Interfaces
     {
         decimal CalcularArea();
         decimal CalcularPerimetro();
-        string TraducirForma(Idioma idioma);
+        string TraducirForma(Idioma idioma, int cantidad);
     }
 }

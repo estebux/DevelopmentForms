@@ -25,14 +25,23 @@ namespace DevelopmentChallenge.Data.Classes
             return 2 * (decimal)Math.PI * _radio;
         }
 
-        public string TraducirForma(Idioma idioma)
+        public string TraducirForma(Idioma idioma, int cantidad)
         {
-            var traducciones = new Dictionary<Idioma, string>
-            {
+            var singular = new Dictionary<Idioma, string>
+            {                
                 { Idioma.Castellano, "Círculo" },
                 { Idioma.Ingles, "Circle" },
                 { Idioma.Italiano, "Cerchio" }
             };
+
+            var plural = new Dictionary<Idioma, string>
+            {
+                { Idioma.Castellano, "Círculos" },
+                { Idioma.Ingles, "Circles" },
+                { Idioma.Italiano, "Cerchi" }
+            };
+
+            var traducciones = cantidad > 1 ? plural : singular;
 
             return traducciones.TryGetValue(idioma, out var traduccion) ? traduccion : "Forma desconocida";
         }

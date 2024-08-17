@@ -17,9 +17,7 @@ namespace DevelopmentChallenge.Data.Classes
         {
             _baseMayor = baseMayor;
             _baseMenor = baseMenor;
-            _altura = altura;
-            //_lado1 = lado1;
-            //_lado2 = lado2;
+            _altura = altura;   
         }
 
         public decimal CalcularArea()
@@ -33,14 +31,25 @@ namespace DevelopmentChallenge.Data.Classes
             return _baseMayor + _baseMenor + _altura + (decimal)ladoOblicuo;
         }
 
-        public string TraducirForma(Idioma idioma)
-        {
-            var traducciones = new Dictionary<Idioma, string>
+        public string TraducirForma(Idioma idioma, int cantidad)
+        {         
+
+            var singular = new Dictionary<Idioma, string>
             {
                 { Idioma.Castellano, "Trapecio Rectángulo" },
                 { Idioma.Ingles, "Right Trapeze" },
                 { Idioma.Italiano, "Trapezio Rettangolo" }
             };
+
+            var plural = new Dictionary<Idioma, string>
+            {
+                { Idioma.Castellano, "Trapecio Rectángulo" },
+                { Idioma.Ingles, "Right Trapezes" },
+                { Idioma.Italiano, "Trapezios Rettangolo" }
+            };
+
+            var traducciones = cantidad > 1 ? plural : singular;
+
 
             return traducciones.TryGetValue(idioma, out var traduccion) ? traduccion : "Forma desconocida";
         }

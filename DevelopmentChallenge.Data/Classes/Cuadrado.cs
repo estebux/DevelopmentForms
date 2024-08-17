@@ -23,14 +23,23 @@ namespace DevelopmentChallenge.Data.Classes
             return _lado * 4;
         }    
 
-        public string TraducirForma(Idioma idioma)
+        public string TraducirForma(Idioma idioma, int cantidad)
         {
-            var traducciones = new Dictionary<Idioma, string>
+            var singular = new Dictionary<Idioma, string>
             {
                 { Idioma.Castellano, "Cuadrado" },
                 { Idioma.Ingles, "Square" },
                 { Idioma.Italiano, "Quadrato" }
+            };          
+
+            var plural = new Dictionary<Idioma, string>
+            {
+                { Idioma.Castellano, "Cuadrados" },
+                { Idioma.Ingles, "Squares" },
+                { Idioma.Italiano, "Quadratos" }
             };
+
+            var traducciones = cantidad > 1 ? plural : singular;
 
             return traducciones.TryGetValue(idioma, out var traduccion) ? traduccion : "Forma desconocida";
         }
