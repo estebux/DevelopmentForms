@@ -9,6 +9,7 @@ namespace DevelopmentChallenge.Tests
     [TestClass]
     public class DataTests
     {
+        public void TestResumenListaVaciaFormasEnIngles()
         [TestMethod]
         public void TestImprimirReporteCastellano()
         {
