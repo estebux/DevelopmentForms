@@ -32,26 +32,14 @@ namespace DevelopmentChallenge.Data.Classes
         }
 
         public string TraducirForma(Idioma idioma, int cantidad)
-        {         
+        {
+            TraduccionesFormas traduccionesFormas = new TraduccionesFormas();
 
-            var singular = new Dictionary<Idioma, string>
+            if (traduccionesFormas.TrapecioRectanguloTraducciones.TryGetValue(idioma, out var traduccion))
             {
-                { Idioma.Castellano, "Trapecio Rectángulo" },
-                { Idioma.Ingles, "Right Trapeze" },
-                { Idioma.Italiano, "Trapezio Rettangolo" }
-            };
-
-            var plural = new Dictionary<Idioma, string>
-            {
-                { Idioma.Castellano, "Trapecio Rectángulo" },
-                { Idioma.Ingles, "Right Trapezes" },
-                { Idioma.Italiano, "Trapezios Rettangolo" }
-            };
-
-            var traducciones = cantidad > 1 ? plural : singular;
-
-
-            return traducciones.TryGetValue(idioma, out var traduccion) ? traduccion : "Forma desconocida";
+                return cantidad > 1 ? traduccion.Plural : traduccion.Singular;
+            }
+            return "Forma desconocida";
         }
     }
 }

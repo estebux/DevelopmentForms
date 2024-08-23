@@ -22,28 +22,18 @@ namespace DevelopmentChallenge.Data.Classes
         public decimal CalcularPerimetro()
         {
             return _lado * 3;
-        }    
+        }
+
 
         public string TraducirForma(Idioma idioma, int cantidad)
-        {        
+        {
+            TraduccionesFormas traduccionesFormas = new TraduccionesFormas();
 
-            var singular = new Dictionary<Idioma, string>
+            if (traduccionesFormas.TrianguloTraducciones.TryGetValue(idioma, out var traduccion))
             {
-                { Idioma.Castellano, "Triángulo" },
-                { Idioma.Ingles, "Triangle" },
-                { Idioma.Italiano, "Triangolo" }
-            };
-
-            var plural = new Dictionary<Idioma, string>
-            {
-                { Idioma.Castellano, "Triángulos" },
-                { Idioma.Ingles, "Triangles" },
-                { Idioma.Italiano, "Triangolos" }
-            };
-
-            var traducciones = cantidad > 1 ? plural : singular;
-
-            return traducciones.TryGetValue(idioma, out var traduccion) ? traduccion : "Forma desconocida";
+                return cantidad > 1 ? traduccion.Plural : traduccion.Singular;
+            }
+            return "Forma desconocida";
         }
     }
 }

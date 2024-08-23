@@ -14,11 +14,11 @@ namespace DevelopmentChallenge.Tests
         public void TestResumenListaVaciaEnCastellano()
         {
             var formas = new List<IFormaGeometrica>
-            {             
+            {
             };
 
             var reporte = FormaGeometrica.Imprimir(formas, Idioma.Castellano);
-            Assert.IsTrue(reporte.Contains("<h1>Lista vacía de formas!</h1>"));         
+            Assert.IsTrue(reporte.Contains("<h1>Lista vacía de formas!</h1>"));
         }
 
         [TestMethod]
@@ -32,7 +32,7 @@ namespace DevelopmentChallenge.Tests
             Assert.IsTrue(reporte.Contains("<h1>Empty list of shapes!</h1>"));
         }
 
-     
+
         [TestMethod]
         public void TestResumenListaVaciaFormasEnItaliano()
         {
@@ -80,7 +80,7 @@ namespace DevelopmentChallenge.Tests
 
             var reporte = FormaGeometrica.Imprimir(formas, Idioma.Italiano);
             Assert.IsTrue(reporte.Contains("<h1>Rapporto delle forme</h1>"));
-            Assert.IsTrue(reporte.Contains("1 Quadrato | Area 25 | Perimetro 20 <br/>"));
+            Assert.IsTrue(reporte.Contains("1 Piazza | Area 25 | Perimetro 20 <br/>"));
         }
 
 
@@ -129,7 +129,7 @@ namespace DevelopmentChallenge.Tests
 
             var reporte = FormaGeometrica.Imprimir(formas, Idioma.Italiano);
             Assert.IsTrue(reporte.Contains("<h1>Rapporto delle forme</h1>"));
-            Assert.IsTrue(reporte.Contains("3 Quadratos | Area 35 | Perimetro 36 <br/>"));
+            Assert.IsTrue(reporte.Contains("3 Piazze | Area 35 | Perimetro 36 <br/>"));
             Assert.IsTrue(reporte.Contains("TOTAL:<br/>3 formes Perimetro 36 Area 35"));
         }
 
@@ -194,9 +194,9 @@ namespace DevelopmentChallenge.Tests
 
             var reporte = FormaGeometrica.Imprimir(formas, Idioma.Italiano);
             Assert.IsTrue(reporte.Contains("<h1>Rapporto delle forme</h1>"));
-            Assert.IsTrue(reporte.Contains("2 Quadratos | Area 29 | Perimetro 28 <br/>"));
+            Assert.IsTrue(reporte.Contains("2 Piazze | Area 29 | Perimetro 28 <br/>"));
             Assert.IsTrue(reporte.Contains("2 Cerchi | Area 52,03 | Perimetro 36,13 <br/>"));
-            Assert.IsTrue(reporte.Contains("3 Triangolos | Area 49,64 | Perimetro 51,6 <br/>"));
+            Assert.IsTrue(reporte.Contains("3 Triangoli | Area 49,64 | Perimetro 51,6 <br/>"));
             Assert.IsTrue(reporte.Contains("TOTAL:<br/>7 formes Perimetro 115,73 Area 130,67"));
         }
 
@@ -254,7 +254,7 @@ namespace DevelopmentChallenge.Tests
 
             var reporte = FormaGeometrica.Imprimir(formas, Idioma.Italiano);
             Assert.IsTrue(reporte.Contains("<h1>Rapporto delle forme</h1>"));
-            Assert.IsTrue(reporte.Contains("1 Quadrato | Area 25 | Perimetro 20 <br/>"));
+            Assert.IsTrue(reporte.Contains("1 Piazza | Area 25 | Perimetro 20 <br/>"));
             Assert.IsTrue(reporte.Contains("1 Cerchio | Area 314,16 | Perimetro 62,83 <br/>"));
             Assert.IsTrue(reporte.Contains("1 Triangolo | Area 15,59 | Perimetro 18 <br/>"));
             Assert.IsTrue(reporte.Contains("1 Trapezio Rettangolo | Area 35 | Perimetro 24,39 <br/>"));
