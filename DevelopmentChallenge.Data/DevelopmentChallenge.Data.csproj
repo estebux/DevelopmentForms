@@ -47,6 +47,7 @@
     <Compile Include="Classes\Circulo.cs" />
     <Compile Include="Classes\Cuadrado.cs" />
     <Compile Include="Classes\FormaGeometrica.cs" />
+    <Compile Include="Classes\TraduccionesFormas.cs" />
     <Compile Include="Classes\TrapecioRectangulo.cs" />
     <Compile Include="Classes\TrianguloEquilatero.cs" />
     <Compile Include="Enums\EnumIdioma.cs" />
